@@ -69,8 +69,6 @@ botao.addEventListener("click", function() {
             item.estoque--;
             estoque.innerText = `Estoque: ${item.estoque}`;
 
-            carrinho.innerHTML += `O produto é: ${item.nome} e o preço é ${item.preco} <br> <br>`;
-
             valor_compra.push(item.preco);
 
         } else {
