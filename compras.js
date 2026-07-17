@@ -67,8 +67,36 @@ botao.addEventListener("click", function() {
 
             if (item.estoque > 0) {
 
+<<<<<<< Updated upstream
                 item.estoque--;
                 estoque.innerText = `Estoque: ${item.estoque}`;
+=======
+            const item_carrinho = document.createElement("div");
+
+            const texto = document.createElement("span");
+            texto.innerText = `Produto: ${item.nome} - R$ ${item.preco}`;
+
+            const remover = document.createElement("button");
+            remover.innerText = "Remover";
+
+            item_carrinho.appendChild(texto);
+            item_carrinho.appendChild(remover);
+
+            carrinho.appendChild(item_carrinho);
+
+            remover.addEventListener("click", function() {
+                item.estoque++;
+                estoque.innerText = `Estoque: ${item.estoque}`;
+
+                const indicePreco = valor_compra.indexOf(item.preco);
+                
+                if (indicePreco !== -1) {
+                    valor_compra.splice(indicePreco, 1);
+                }
+
+                item_carrinho.remove();
+            })
+>>>>>>> Stashed changes
 
                 const item_carrinho = document.createElement("div");
 
