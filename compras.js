@@ -31,10 +31,13 @@ const valor_compra = [];
 const botao = document.getElementById("mostrar");
 
 botao.addEventListener("click", function() {
+botao.addEventListener("click", function () {
+
     const lista = document.getElementById("lista");
     lista.innerText = "";
 
     produtos.forEach((item) => {
+
         const div = document.createElement("div");
 
         const nome = document.createElement("h2");
@@ -64,40 +67,18 @@ botao.addEventListener("click", function() {
         const carrinho = document.getElementById("carrinho");
 
         comprar.addEventListener("click", function() {
+        comprar.addEventListener("click", function () {
 
             if (item.estoque > 0) {
 
 <<<<<<< Updated upstream
+                // Diminui o estoque
                 item.estoque--;
                 estoque.innerText = `Estoque: ${item.estoque}`;
 =======
-            const item_carrinho = document.createElement("div");
-
-            const texto = document.createElement("span");
-            texto.innerText = `Produto: ${item.nome} - R$ ${item.preco}`;
-
-            const remover = document.createElement("button");
-            remover.innerText = "Remover";
-
-            item_carrinho.appendChild(texto);
-            item_carrinho.appendChild(remover);
-
-            carrinho.appendChild(item_carrinho);
-
-            remover.addEventListener("click", function() {
-                item.estoque++;
-                estoque.innerText = `Estoque: ${item.estoque}`;
-
-                const indicePreco = valor_compra.indexOf(item.preco);
-                
-                if (indicePreco !== -1) {
-                    valor_compra.splice(indicePreco, 1);
-                }
-
-                item_carrinho.remove();
-            })
 >>>>>>> Stashed changes
 
+                // Cria o item do carrinho
                 const item_carrinho = document.createElement("div");
 
                 const texto = document.createElement("span");
@@ -111,7 +92,11 @@ botao.addEventListener("click", function() {
 
                 carrinho.appendChild(item_carrinho);
 
-                remover.addEventListener("click", function() {
+                // Adiciona o preço ao array
+                valor_compra.push(item.preco);
+
+                // Remove o item do carrinho
+                remover.addEventListener("click", function () {
 
                     item.estoque++;
                     estoque.innerText = `Estoque: ${item.estoque}`;
@@ -125,8 +110,6 @@ botao.addEventListener("click", function() {
                     item_carrinho.remove();
 
                 });
-
-                valor_compra.push(item.preco);
 
             } else {
 
@@ -143,6 +126,7 @@ botao.addEventListener("click", function() {
 const pagamento = document.getElementById("pagamento");
 
 pagamento.addEventListener("click", function() {
+pagamento.addEventListener("click", function () {
 
     let soma = 0;
 
