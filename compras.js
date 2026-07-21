@@ -30,7 +30,6 @@ const valor_compra = [];
 
 const botao = document.getElementById("mostrar");
 
-botao.addEventListener("click", function() {
 botao.addEventListener("click", function () {
 
     const lista = document.getElementById("lista");
@@ -66,17 +65,10 @@ botao.addEventListener("click", function () {
 
         const carrinho = document.getElementById("carrinho");
 
-        comprar.addEventListener("click", function() {
         comprar.addEventListener("click", function () {
 
             if (item.estoque > 0) {
 
-<<<<<<< Updated upstream
-                // Diminui o estoque
-                item.estoque--;
-                estoque.innerText = `Estoque: ${item.estoque}`;
-=======
->>>>>>> Stashed changes
 
                 // Cria o item do carrinho
                 const item_carrinho = document.createElement("div");
@@ -125,7 +117,6 @@ botao.addEventListener("click", function () {
 
 const pagamento = document.getElementById("pagamento");
 
-pagamento.addEventListener("click", function() {
 pagamento.addEventListener("click", function () {
 
     let soma = 0;
